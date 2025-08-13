@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💡 Tablero de Ideas Anónimas</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Iconos de Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💡 Tablero de <span class="resaltado">Ideas Anónimas</span></h1>
+
+    <!-- Botón de login -->
+    <div id="login">
+      <a href="/auth/google" class="btn-google">
+        <i class="fab fa-google"></i> Iniciar sesión con Google
+      </a>
+    </div>
+
+    <!-- Tablero de ideas oculto hasta login -->
+    <div id="tablero" style="display:none;">
+      <form id="formIdea">
+        <input
+          type="text"
+          id="idea"
+          placeholder="💬 Escribe tu idea..."
+          required
+        />
+        <button type="submit" class="btn-enviar">
+          <i class="fas fa-paper-plane"></i> Enviar
+        </button>
+      </form>
+      <ul id="listaIdeas"></ul>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
